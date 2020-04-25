@@ -1,6 +1,7 @@
 package com.example.kotlin_sample.data.source.image
 
 import com.example.kotlin_sample.data.ImageData
+import com.example.kotlin_sample.util.random
 
 class ImageRemoteData  : ImageDataSource{
     override fun loadImageFileName(fileName: (String) -> Unit) {
@@ -23,7 +24,8 @@ class ImageRemoteData  : ImageDataSource{
     override fun loadImageList(imageDataList: (List<ImageData>) -> Unit, size: Int) {
         val list = mutableListOf<ImageData>()
         for (index in 1..size){
-            val randNumber = (1..10).random() + 1
+            val randNumber = (1..10).random()
+
             val url = imageList[randNumber]
             val name = String.format("sample_%02d", randNumber)
             list.add(ImageData(url,name))
