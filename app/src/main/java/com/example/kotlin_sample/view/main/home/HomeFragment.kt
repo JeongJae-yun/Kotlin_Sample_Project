@@ -1,7 +1,6 @@
 package com.example.kotlin_sample.view.main.home
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_sample.R
 import com.example.kotlin_sample.data.source.flickr.FlickrRepository
 import com.example.kotlin_sample.data.source.image.ImageRepository
+import com.example.kotlin_sample.view.main.detail.DetailImageBottomSheet
 import com.example.kotlin_sample.view.main.home.adapter.ImageRecyclerAdapter
 import com.example.kotlin_sample.view.main.home.presenter.HomeContract
 import com.example.kotlin_sample.view.main.home.presenter.HomePresenter
-import kotlinx.android.synthetic.main.activity_recycler_view.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), HomeContract.View {
@@ -71,7 +70,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     private val recyclerViewOnScrollListener = object : RecyclerView.OnScrollListener(){
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
-            val visibleItemCount = recyclerView?.childCount as Int
+            val visibleItemCount = recyclerView.childCount as Int
             val totalItemCount = imageRecyclerAdapter.itemCount
             var firstVisibleItem = (recyclerView.layoutManager as? GridLayoutManager)?.findFirstVisibleItemPosition() ?: 0
             //GridLayoutManager가 맞으면 첫번째 아이템을 불러오는 것.
@@ -114,5 +113,11 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun KeywordFail() {
         Toast.makeText(context,"Keyword is Empty", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showBottomSheetDialog(photoId: String) {
+        if (isDetached) return
+
+        DetailImageBottomSheet.create(photoId).show(activity!!.supportFragmentManager,"DetailImageBottomSheet")
     }
 }

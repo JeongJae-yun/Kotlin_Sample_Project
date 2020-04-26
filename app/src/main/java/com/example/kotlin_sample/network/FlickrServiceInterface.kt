@@ -1,6 +1,7 @@
 package com.example.kotlin_sample.network
 
 import com.example.kotlin_sample.BuildConfig
+import com.example.kotlin_sample.data.source.PhotoInfo
 import com.example.kotlin_sample.data.source.PhotoResponse
 import retrofit2.Call
 import retrofit2.http.POST
@@ -22,4 +23,10 @@ interface FlickrServiceInterface {
        @Query("page") page: Int,
        @Query("per_page") perPage : Int
     ) : Call<PhotoResponse>
+
+
+    @POST("?method=flickr.photos.getInfo&api_key=${BuildConfig.FLICKR_API_KEY}&format=json&nojsoncallback=1")
+    fun getFlickrPhotoDetail(
+        @Query("photo_id") photoId: String
+    ) : Call<PhotoInfo>
 }

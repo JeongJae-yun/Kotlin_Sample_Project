@@ -12,4 +12,8 @@ interface ImageRecyclerModel {
 
     fun refreshItem()
 
+    fun getItem(position:Int) : Photo
+
+    var onClick: (Int) -> Unit
+
 }

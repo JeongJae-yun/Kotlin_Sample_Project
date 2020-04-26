@@ -1,5 +1,6 @@
 package com.example.kotlin_sample.data.source.flickr
 
+import com.example.kotlin_sample.data.source.PhotoInfo
 import com.example.kotlin_sample.data.source.PhotoResponse
 import com.example.kotlin_sample.network.FlickrServiceInterface
 import com.example.kotlin_sample.network.createRetrofit
@@ -18,6 +19,9 @@ class FlickrRemoteData  : FlickrDataSource{
         page = page,
         perPage =  perPage
     )
+
+    override fun getPhotoDetail(photoId: String): Call<PhotoInfo>
+            =flickrServiceInterface.getFlickrPhotoDetail(photoId)
     /*override fun getRecentPhoto(page: Int, perPage: Int) = flickrServiceInterface.getFlickrRecentPhotos(page, perPage)*/
 
 

@@ -1,17 +1,13 @@
 package com.example.kotlin_sample.view.main
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlin_sample.ImageLoadSample.ImageDownloadAsync
-import com.example.kotlin_sample.ImageLoadSample.ImageDownloadThread
-import com.example.kotlin_sample.ImageLoadSample.ImageLoadActivity
 import com.example.kotlin_sample.R
 import com.example.kotlin_sample.util.replace
+import com.example.kotlin_sample.view.main.Dashboard.DashboardFragment
+import com.example.kotlin_sample.view.main.Notification.NotificationsFragment
 import com.example.kotlin_sample.view.main.home.HomeFragment
-import kotlinx.android.synthetic.main.activity_image_load.*
 
 class MainActivity : AppCompatActivity() {
 

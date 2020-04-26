@@ -1,10 +1,8 @@
 package com.example.kotlin_sample.view.main.home.presenter
 
-import android.os.AsyncTask
 import com.example.kotlin_sample.data.source.PhotoResponse
 import com.example.kotlin_sample.data.source.flickr.FlickrRepository
 import com.example.kotlin_sample.data.source.image.ImageRepository
-import com.example.kotlin_sample.util.random
 import com.example.kotlin_sample.view.main.home.adapter.model.ImageRecyclerModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,14 +18,18 @@ class HomePresenter(val view :HomeContract.View,
         ImageAsyncTask(this,view, imageRepository,imageRecyclerModel).execute() //view를 AsyncTask로 넘겨준다. ImageAsyncTask는 static 클래스이다.
     }*/
 
+    init {
+        imageRecyclerModel.onClick = {position->
+            view.showBottomSheetDialog(imageRecyclerModel.getItem(position).id)
+        }
+    }
+
     var isLoading = false
 
     private val perPage = 50
     private var page = 0
 
-    /*내 예시---*/
-
-
+    /*내 예시----------------*/
     override fun SearchKeyword(key: String) {
         imageRecyclerModel.refreshItem()
         loadFlickrImage(key)
@@ -41,11 +43,8 @@ class HomePresenter(val view :HomeContract.View,
         isLoading = true
         view.showProgress()
 
-        if (keys.length==0){
-            resultKey = Keyword
-        }else{
-            resultKey = keys
-        }
+        if (keys.isEmpty()){ resultKey = Keyword }
+        else{ resultKey = keys }
 
         flickrRepository.getSearchPhoto(resultKey,++page,perPage) //1페이지로 시작, 한 페이지당 50개씩 가져옴.
             .enqueue(object : Callback<PhotoResponse>{

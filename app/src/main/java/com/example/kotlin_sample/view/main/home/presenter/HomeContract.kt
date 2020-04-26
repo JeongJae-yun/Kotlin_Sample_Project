@@ -11,6 +11,8 @@ interface HomeContract{
         fun showLoadFail(messages: String)
 
         fun KeywordFail()
+
+        fun showBottomSheetDialog(photoId: String)
     }
 
     interface  Presenter{
@@ -18,6 +20,5 @@ interface HomeContract{
         fun loadFlickrImage(keys: String)
 
         fun SearchKeyword(key : String)
-
     }
 }
