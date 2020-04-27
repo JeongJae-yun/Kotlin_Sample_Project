@@ -3,10 +3,10 @@
 * * *
 
 ### Language : Kotlin     
-### Library    
+
+### API    
 - Retrofit2
-- OkHttp      
-### API
+- OkHttp 
 - FlickrAPI   
 
 
@@ -26,8 +26,8 @@
 
 
 
-[sample_bottomSheet]:ScreenShot/FlickrAPI_BottomSheet.gif
-[sample_ChromeTab]:ScreenShot/FlickrAPI_ChromeTab.gif
-[sample_MainPage]:ScreenShot/FlickrAPI_MainPage.gif
+[sample_bottomSheet]:ScreenShot/FlickrAPI_BottomSheet.mp4
+[sample_ChromeTab]:ScreenShot/FlickrAPI_ChromeTab.mp4
+[sample_MainPage]:ScreenShot/FlickrAPI_MainPage.mp4
 
 
