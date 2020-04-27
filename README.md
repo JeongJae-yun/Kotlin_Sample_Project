@@ -13,11 +13,21 @@
 * * *
 ## Sample
 ### Main Page
-![메인](https://github.com/JeongJae-yun/Kotlin_Sample_Project/blob/master/ScreenShot/%EC%82%AC%EC%A7%84-%EC%98%AC%EB%A6%AC%EA%B3%A0-%EB%82%B4%EB%A6%AC%EA%B8%B0.gif)
+![sample_MainPage]
 
 ### Chrome Custom Tab
-<iframe width="360" height="515" src="https://youtu.be/nKxtADWivRM" frameborder="0" allowfullscreen></iframe>
+![sample_ChromeTab]
 
 ### Using BottomSheet 
-<iframe width="360" height="515" src="https://youtu.be/_Nx2hD56EKM" frameborder="0" allowfullscreen></iframe>
+![sample_bottomSheet]
+
+
+
+
+
+
+[sample_bottomSheet]:ScreenShot/FlickrAPI_BottomSheet.gif
+[sample_ChromeTab]:ScreenShot/FlickrAPI_ChromeTab.gif
+[sample_MainPage]:ScreenShot/FlickrAPI_MainPage.gif
+
 
