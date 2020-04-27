@@ -41,7 +41,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         //Presenter위에서 정의한 것 가져다가 쓴다.
         //homePresenter.loadImage()
-        var keyword : String = "Eiffel Tower"
+        var keyword : String = "hawai"
         homePresenter.loadFlickrImage(keyword)
 
         recycler_view.run {

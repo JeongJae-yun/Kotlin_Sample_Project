@@ -5,10 +5,15 @@ interface DetailImageContract {
         fun updateToolbarItem(buddyIcon:String, buddyName:String)
 
         fun updateItem(imageUrl:String, title:String, content:String, dat:String,viewCount:String, commentCount:String)
+
+        fun showFlickrWebPage(url : String)
     }
 
     interface Presenter{
         fun loadDetailInfo(photoId : String)
+
+
+        fun loadFlickrWebPage()
 
     }
 }
