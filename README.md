@@ -26,8 +26,8 @@
 
 
 
-[sample_bottomSheet]:ScreenShot/FlickrAPI_BottomSheet.mp4
-[sample_ChromeTab]:ScreenShot/FlickrAPI_ChromeTab.mp4
-[sample_MainPage]:ScreenShot/FlickrAPI_MainPage.mp4
+[sample_bottomSheet]:ScreenShot/사진-올리고-내리기.gif
+[sample_ChromeTab]:ScreenShot/크롬이동화면.gif
+[sample_MainPage]:ScreenShot/시작화면.gif
 
 
