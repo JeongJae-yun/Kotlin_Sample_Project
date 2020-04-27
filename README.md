@@ -1,5 +1,7 @@
 # Kotlin_Sample_Project
 
+![20200427_183615](https://user-images.githubusercontent.com/55985789/80370134-6a839100-88ca-11ea-8f32-3dc4690da6ac.jpg)     
+
 * * *
 
 ### Language : Kotlin     
