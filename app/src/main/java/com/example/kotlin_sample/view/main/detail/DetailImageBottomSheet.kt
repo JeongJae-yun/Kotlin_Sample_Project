@@ -1,12 +1,14 @@
 package com.example.kotlin_sample.view.main.detail
 
 import android.app.Dialog
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import com.example.kotlin_sample.R
 import com.example.kotlin_sample.data.source.flickr.FlickrRepository
 import com.example.kotlin_sample.view.main.detail.presenter.DetailImageContract
@@ -104,7 +106,7 @@ class DetailImageBottomSheet : BottomSheetDialogFragment(), DetailImageContract.
 
 
                  img_web.setOnClickListener {
-                         // Show chrome.
+                         detailImagePresenter.loadFlickrWebPage()
                     }
 
              //로드할때 photoId를 가져와서 load처리를 함.
@@ -130,4 +132,12 @@ class DetailImageBottomSheet : BottomSheetDialogFragment(), DetailImageContract.
                          tv_viewer_count.text = viewCount
                          tv_comment_count.text = commentCount
                      }
-     }
+
+    override fun showFlickrWebPage(url: String) {
+        CustomTabsIntent.Builder().apply {
+            setToolbarColor(resources.getColor(R.color.colorPrimary))
+        }.build().run {
+            launchUrl(requireContext(), Uri.parse(url))
+        }
+    }
+}
