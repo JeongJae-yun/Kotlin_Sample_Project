@@ -1,4 +1,6 @@
 # Kotlin_Sample_Project
+![license](https://img.shields.io/badge/license-MIT%20License-blue.svg) 
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 
 ![20200427_183615](https://user-images.githubusercontent.com/55985789/80370134-6a839100-88ca-11ea-8f32-3dc4690da6ac.jpg)     
 
